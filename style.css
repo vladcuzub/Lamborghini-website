@@ -359,7 +359,7 @@ li a:hover::before {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url("/pictures/urus/urus-model1.jpeg");
+  background-image: url("pictures/urus/urus-model1.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -647,7 +647,7 @@ li a:hover::before {
 /* ------------------------ HURACAN  PAGE (Modele )------------------ */
 /* ------------------------ HERO (Modele )------------------ */
 .huracan {
-  background-image: url("/pictures/huracan/huracan-hero.jpeg") !important;
+  background-image: url("pictures/huracan/huracan-hero.jpeg") !important;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -661,7 +661,7 @@ li a:hover::before {
 /* ------------------------(Modele )------------------ */
 /* ------------------------ REVUELTO PAGE (Modele )------------------ */
 .revuelto {
-  background-image: url("/pictures/revuelto/revv.webp") !important;
+  background-image: url("pictures/revuelto/revv.webp") !important;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -929,7 +929,7 @@ li a::before{
   }
   .controls{
     display: flex;
- ju
+
   }
   .controls button {
     justify-content: space-between;
