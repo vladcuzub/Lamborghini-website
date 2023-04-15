@@ -845,7 +845,9 @@ li a::before{
   }
   .modele-box {
     max-width: 20%;
-    margin: 40rem auto;
+    margin: 75vh auto; 
+  
+    padding-bottom: 2rem;
   }
   .title-btn {
     font-size: 1.5rem;
