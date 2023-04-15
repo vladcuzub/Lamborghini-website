@@ -1,0 +1,1043 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+}
+
+/* ------------------------  HOME PAGE ------------------ */
+/* NAVBAR */
+.logo {
+  width: 60px;
+  transform: rotateY(90deg);
+  animation: turner 5s infinite linear;
+}
+
+@keyframes turner {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.navbar {
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  padding: 0 2rem;
+  z-index: 9;
+}
+.navbar .nav-links {
+  display: inline-flex;
+}
+.nav-links li {
+  list-style: none;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  margin-left: 2rem;
+  padding: 2.5rem 0;
+}
+.drop-menu li a {
+  margin-left: 8.5rem;
+  padding-bottom: 0;
+}
+
+.nav-links .drop-menu {
+  background-color: rgb(0, 0, 0);
+  left: 0;
+  width: 100%;
+  flex-direction: column;
+  position: absolute;
+  transition: linear 0.25s;
+  top: 100px;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+.nav-links li:hover .drop-menu {
+  visibility: visible;
+  opacity: 1;
+  top: 100px;
+  height: 250px;
+}
+.active-nav {
+  position: absolute;
+  top: 100px;
+  height: 250px;
+  width: 100%;
+  background-color: red;
+  display: block;
+}
+/*HOVER DROPDOWN MENU*/
+.nav-link {
+  line-height: 25px;
+}
+.active-hover {
+  height: 200px;
+  top: 100px;
+}
+/*HOVER DROPDOWN MENU*/
+/* NAVBAR */
+
+/*MENU BUTTON*/
+.navbar .menu-btn {
+  position: relative;
+  border-radius: 8px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: auto;
+  display: none;
+}
+
+.menu-btn span {
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: rgb(222, 222, 222);
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+.menu-btn span:nth-child(1) {
+  transform: translateY(-12px);
+  width: 20px;
+  left: 10px;
+}
+
+.menu-btn.active span:nth-child(1) {
+  width: 40px;
+  transform: translateY(0px) rotate(45deg);
+  transition-delay: 0.25s;
+}
+
+.menu-btn span:nth-child(2) {
+  transform: translateY(12px);
+  width: 20px;
+  left: 10px;
+}
+
+.menu-btn.active span:nth-child(2) {
+  transform: translateY(0px) rotate(315deg);
+  width: 40px;
+  transition-delay: 0.1s;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: translateX(100px);
+}
+
+/*MENU BUTTON*/
+
+/* NAVBAR HOVER LINK EFFECT*/
+li a {
+  color: rgb(222, 222, 222);
+  background-size: 100% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+li a:before {
+  content: "";
+  background: rgb(229, 229, 229);
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 0;
+  height: 0.8px;
+  transition: all 0.3s ease-in-out;
+}
+
+li a:hover {
+  background-position: 0;
+}
+
+li a:hover::before {
+  width: 100%;
+}
+
+/* HERO CAROUSEL*/
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+}
+
+.carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("pictures/urus/urus.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-left: 2rem;
+  padding-top: 10rem;
+}
+
+.carousel:nth-child(3) {
+  background-image: url("pictures/revuelto/rev.jpg");
+  background-size: cover;
+  z-index: -1;
+}
+
+.carousel:nth-child(4) {
+  background-image: url("pictures/huracan/hur.jpeg");
+  background-size: cover;
+  z-index: -1;
+}
+
+.carousel .title {
+  color: white;
+  font-size: 7rem;
+  text-transform: uppercase;
+  opacity: 0;
+  margin-top: 15rem;
+  margin-left: 5.5rem;
+}
+
+.carousel .sub-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 0.3rem;
+  margin-left: 6rem;
+}
+
+.btn-sec {
+  width: 250px;
+  height: 100px;
+  display: flex;
+  margin: 3rem 6rem;
+}
+
+.btn-sec h5 {
+  color: white;
+  margin: 0.7rem 3.5rem;
+  font-size: 1rem;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  border: 1px solid white;
+  z-index: -1;
+  position: absolute;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.carousel.carousel-active {
+  z-index: 2;
+  animation: fade-slow 1s forwards 1;
+}
+
+@keyframes fade-slow {
+  0% {
+    transform: translateX(-100px);
+    filter: blur(20px);
+  }
+
+  100% {
+    transform: translateX(0px);
+    filter: blur(0px);
+  }
+}
+
+.carousel.carousel-active .title,
+.carousel.carousel-active .sub-title,
+.carousel.carousel-active .btn-sec {
+  opacity: 0;
+  animation: fade 1s forwards 1;
+}
+
+.no-transition {
+  transition: none !important;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+    filter: blur(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+    filter: blur(0px);
+  }
+}
+
+.modele-box {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 15rem;
+  left: 8rem;
+  height: 300px;
+  width: 400px;
+}
+
+.btn1,
+.btn2 {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 3;
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+  border: none;
+  font-size: 16px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.btn1 {
+  margin-left: 5rem;
+}
+
+.btn2:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+.btn1:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+.title-btn {
+  font-size: 2rem;
+  color: white;
+  z-index: 4;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/* ------------------------  HOME PAGE ------------------ */
+
+/* ------------------------ URUS PAGE (Modele )------------------ */
+/* HERO URUS*/
+.hero .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("/pictures/urus/urus-model1.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 5;
+  left: 0;
+}
+
+.hero .cover h2 {
+  margin-top: 24rem;
+  text-transform: uppercase;
+  font-size: 7rem;
+  margin-left: 6rem;
+  color: white;
+  animation: fade 1s forwards 1;
+}
+
+.hero .cover h4 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 0.3rem;
+  margin-left: 6rem;
+  animation: fade 1.5s forwards 1;
+}
+
+/* HERO URUS*/
+/* DESCRIPTION URUS */
+.details-sec {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+}
+
+.text-sec {
+  width: 50%;
+  text-align: left;
+  padding: 3rem;
+  margin-top: 6rem;
+  margin-left: 10%;
+}
+
+.text-sec img {
+  width: 260px;
+  margin-bottom: 3.5rem;
+}
+
+.text-sec p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8rem;
+}
+
+.shape {
+  background-color: rgba(202, 202, 202, 0.159);
+  clip-path: polygon(40% 0, 100% 0, 60% 100%, 0 100%);
+  position: absolute;
+  min-width: 180vh;
+  height: 150vh;
+  opacity: 1;
+  margin: 12rem 2rem;
+  right: 0;
+}
+
+.sec-1 {
+  height: 600px;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  position: relative;
+}
+
+.sec-2 {
+  height: 700px;
+  margin-top: 9rem;
+  position: relative;
+}
+
+.sec-3 {
+  height: 650px;
+  display: flex;
+  justify-content: end;
+  padding-right: 20rem;
+  text-align: left;
+  position: relative;
+}
+
+.sec-3-text {
+  width: 500px;
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+}
+
+.sec-3-text h3 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  font-family: roboto;
+  text-transform: uppercase;
+}
+
+.sec-3-text p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7rem;
+}
+
+.img-path-1 {
+  position: absolute;
+  width: 650px;
+  height: auto;
+  right: 0;
+}
+
+.img-mob,
+.img-mob1 {
+  display: none;
+}
+
+.img-path-2 {
+  position: absolute;
+  width: 900px;
+  height: auto;
+  right: 0;
+}
+
+.img-path-3 {
+  position: absolute;
+  width: 950px;
+  height: auto;
+  right: 45rem;
+  margin-top: 4rem;
+}
+
+.img-path-4 {
+  height: auto;
+  width: 950px;
+  margin-top: -4rem;
+  position: absolute;
+  right: 0;
+  margin-right: 60rem;
+}
+
+/* DESCRIPTION URUS */
+
+/* CAROUSEL*/
+.models-container {
+  margin-top: -3rem;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    to top,
+    rgb(56, 56, 56),
+    20%,
+    rgba(255, 255, 255, 0.101)
+  );
+}
+
+.title h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: 0.056rem;
+  padding-top: 2rem;
+  margin-left: 3rem;
+}
+
+.controls {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-text h2 {
+  font-size: 25rem;
+  text-transform: uppercase;
+  color: rgba(114, 114, 114, 0.165);
+  margin-top: 4rem;
+  z-index: 1;
+}
+
+.carousel-auto {
+  margin-left: 40rem;
+  margin-top: -30rem;
+  z-index: 2;
+  height: 40em;
+  display: flex;
+}
+
+.carousel-auto .car1 {
+  display: none;
+  top: 1rem;
+  min-width: 950px;
+  height: auto;
+  padding-top: 0.9rem;
+}
+
+.carousel-auto .car2 {
+  display: none;
+  top: 1rem;
+  min-width: 950px;
+  height: auto;
+  padding-bottom: 2.9rem;
+  padding-left: 1.2rem;
+}
+
+@keyframes fade-auto {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+    filter: blur(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0px);
+  }
+}
+
+.carousel-auto .active,
+.model-car .active {
+  display: block;
+  animation: fade-auto 0.7s forwards 1;
+}
+
+.model-car {
+  margin-left: 10%;
+  border-bottom: 1.5px solid rgb(228, 228, 228);
+  width: 400px;
+  margin-top: -10rem;
+  padding: 1rem;
+}
+
+.model-text1,
+.model-text2 {
+  display: none;
+}
+
+.model-car h4 {
+  margin-top: 5rem;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: 0.056rem;
+  text-transform: uppercase;
+  animation: fade 1s forwards 1;
+}
+
+.btn11,
+.btn22 {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  z-index: 3;
+}
+
+.btn11 {
+  margin-left: 3rem;
+}
+
+.btn22:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.btn11:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+}
+
+/* CAROUSEL*/
+
+/* ------------------------ HURACAN  PAGE (Modele )------------------ */
+/* ------------------------ HERO (Modele )------------------ */
+.huracan {
+  background-image: url("/pictures/huracan/huracan-hero.jpeg") !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 5;
+  left: 0;
+}
+
+/* ------------------------(Modele )------------------ */
+/* ------------------------ REVUELTO PAGE (Modele )------------------ */
+.revuelto {
+  background-image: url("/pictures/revuelto/revv.webp") !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 5;
+  left: 0;
+}
+
+.text-sec h3 {
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+  font-weight: 400;
+}
+
+/* ------------------------ REVUELTO PAGE (Modele )------------------ */
+
+/* ------------------------ Footer------------------ */
+.footer-sec {
+  width: 100%;
+  height: 100px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 2rem;
+}
+
+.footer-sec li {
+  display: inline;
+}
+
+.footer-sec li a {
+  text-decoration: none;
+  padding: 0 1rem;
+  color:rgb(255, 255, 255);
+  font-weight: 200;
+}
+
+
+.icons img {
+  height: auto;
+  width: 30px;
+  background-color:   rgb(137, 137, 137);
+  margin-left: 2rem;
+  border-radius: 30%;
+}
+
+.f-text h3 {
+  color: rgb(137, 137, 137);
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+/* ------------------------ Footer------------------ */
+/* Mobile styles */
+@media only screen and (max-width: 767px) {
+
+  .hero {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+  }
+  .logo {
+    width: 35px;
+  }
+/*
+  .modele-box {
+    top: 80%;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+  }
+*/
+  .carousel .title {
+    font-size: 5rem;
+  }
+
+  .carousel .sub-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 300px) and (max-width: 1024px) {
+  .logo {
+    width: 40px;
+  }
+  .navbar{
+    height: 70px;
+  }
+.nav-links{
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 0;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  transition: linear .25s;
+  opacity: 0;
+visibility: hidden;
+}
+.nav-links li a {
+  padding: .7rem 0;
+  width: 100px;
+  margin: 0 auto ;
+}
+.nav-links .drop-menu {
+  position: relative;
+  top: 10px;
+}
+.drop-menu li a {
+  color: rgb(90, 90, 90);
+}
+.nav-links li:hover .drop-menu {
+  visibility: visible;
+  opacity: 1;
+  top: 0;
+  height: 135px;
+}
+li a::before{
+   display: none;
+}
+.nav-links.active{
+  top: 70px;
+  width: 100%;
+  height: 300px;
+  background-color: rgb(0, 0, 0);
+  opacity: 1;
+  visibility: visible;
+  transition: linear .25s;
+}
+  .navbar .menu-btn {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .nav-links li a {
+   display: block;
+  }
+  /* HERO CAROUSEL*/
+  .hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero .cover h2 {
+    margin-top: 10rem;
+    margin-left: 2rem;
+    font-size: 5rem;
+  }
+  .hero .cover h4 {
+    margin-left: 2rem;
+  }
+  .carousel {
+   padding: 0;
+  }
+
+  .carousel .title {
+    font-size: 5rem;
+    margin: 15rem 0 0 1.5rem;
+  }
+
+  .carousel .sub-title {
+    font-size: 1.5rem;
+    margin: .5rem 1.5rem;
+  }
+  .btn-sec {
+    margin-left: 1.5rem;
+  }
+
+  .details-sec {
+    padding: 0 1.5rem;
+  }
+  .modele-box {
+  position: relative;
+  top: 85%;
+  margin: auto;
+  }
+
+  /*URUS PAGE */
+  .sec-1 {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position: relative;
+  }
+
+  .sec-2 {
+    display: none;
+  }
+
+  .sec-3 {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    margin-top: 1rem;
+  }
+
+  .sec-3-text {
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0;
+    height: auto;
+  }
+
+  .sec-3-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .img-path-1,
+  .img-path-2,
+  .img-path-3,
+  .img-path-4 {
+    display: none;
+  }
+
+  .img-mob {
+    display: block;
+    width: 100%;
+    height: 50%;
+    margin: auto;
+  }
+
+  .text-sec {
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0;
+  }
+
+  .text-sec img {
+    width: 160px;
+    margin-bottom: 1.5rem;
+  }
+
+  .text-sec h3 {
+    font-size: 1.5rem;
+  }
+
+  .text-sec p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7rem;
+  }
+
+  .title h2 {
+    font-size: 2rem;
+    margin-left: 0;
+  }
+
+  .background-text h2 {
+    font-size: 15rem;
+  }
+  .controls{
+    display: flex;
+ ju
+  }
+  .controls button {
+    justify-content: space-between;
+  }
+
+  .carousel-auto {
+    margin-left: 0;
+    margin-top: -22rem;
+  }
+
+  .models-container {
+    margin-top: 1rem;
+  }
+
+  .model-car {
+    width: 270px;
+  }
+
+  .model-car h4 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-auto .car1,
+  .carousel-auto .car2 {
+    min-width: 100px;
+  }
+  .footer-sec {
+    height: 80px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem ;
+  }
+
+  .footer-sec ul li a {
+  text-decoration: none;
+  padding: 0 .7rem;
+  font-size: .8rem;
+  margin: 0;
+}
+.icons img {
+  width: 20px;
+}
+.f-text h3 {
+  font-size: 0.7rem;
+}
+
+}
+
+
+/*Small Desktop */
+@media only screen and (min-width: 1025px) and (max-width: 1500px) {
+  .img-path-1 {
+    width: 470px;
+  }
+
+  .img-path-2 {
+    width: 670px;
+  }
+
+  .img-path-3 {
+    width: 690px;
+    right: 35rem;
+  }
+
+  .img-path-4 {
+    width: 695px;
+    margin-right: 46rem;
+    margin-top: -13rem;
+  }
+
+  .sec-2 {
+    margin-top: -3.5rem;
+  }
+
+  .sec-3 {
+    padding-right: 11rem;
+    height: auto;
+  }
+
+  .text-sec {
+    width: 50%;
+    margin: 4rem 3rem;
+    padding: 0;
+  }
+
+  .sec-3-text {
+    margin-top: -8rem;
+  }
+
+  .background-text h2 {
+    font-size: 20rem;
+    margin-top: 2rem;
+  }
+
+  .carousel-auto {
+    margin-left: 17%;
+    margin-top: -25rem;
+  }
+
+  .car1,
+  .car2 {
+    max-width: 700px;
+  }
+
+  .models-container {
+    margin-top: 9rem;
+  }
+}
